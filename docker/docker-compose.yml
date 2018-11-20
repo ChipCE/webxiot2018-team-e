@@ -28,10 +28,10 @@ services:
      - "1883:1883"
 
   mysql:
-    build: ./mysql
-    image: mysql-dev
+    image: hypriot/rpi-mysql
     environment:
      - MYSQL_ROOT_PASSWORD=root
+     - TZ=Asia/Tokyo
     container_name: mysql-dev
     dns: 8.8.8.8
     sysctls:
