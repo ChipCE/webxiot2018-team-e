@@ -1,0 +1,65 @@
+version: '3.5'
+services:
+  apache-php:
+    build: ./apache-php
+    container_name: apache-php-dev
+    dns: 8.8.8.8
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    networks:
+      docker-net:
+        ipv4_address: 10.10.0.2
+    ports:
+     - "80:80"
+    volumes:
+    - /home/pi/Code/www:/www
+
+  mqtt:
+    build: ./mqtt
+    image: mqtt-dev
+    container_name: mqtt-dev
+    dns: 8.8.8.8
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    networks:
+      docker-net:
+        ipv4_address: 10.10.0.3
+    ports:
+     - "1883:1883"
+
+  mysql:
+    build: ./mysql
+    image: mysql-dev
+    container_name: mysql-dev
+    dns: 8.8.8.8
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    networks:
+      docker-net:
+        ipv4_address: 10.10.0.4
+    ports:
+     - "3306:3306"
+
+  nodered:
+    build: ./nodered
+    image: nodered-dev
+    container_name: nodered-dev
+    dns: 8.8.8.8
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+    networks:
+      docker-net:
+        ipv4_address: 10.10.0.5
+    ports:
+      - "1880:1880"
+
+
+networks:
+  docker-net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+      - subnet: 10.10.0.0/16

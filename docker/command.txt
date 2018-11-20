@@ -1,0 +1,8 @@
+docker build -t [image-name] .
+docker run -p [host-port]:[container-port] --name [container-name] -d [image-name]
+docker start [package-name]
+docker port [package-name] [package-port]
+
+docker image prune -a
+docker-compose up
+docker exec -it [container] [command]
