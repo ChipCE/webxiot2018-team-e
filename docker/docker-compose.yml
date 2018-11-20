@@ -28,7 +28,10 @@ services:
      - "1883:1883"
 
   mysql:
-    build: ./mysql
+    build:
+      context: .
+      args:
+        MYSQL_ROOT_PASSWORD: root
     image: mysql-dev
     container_name: mysql-dev
     dns: 8.8.8.8
