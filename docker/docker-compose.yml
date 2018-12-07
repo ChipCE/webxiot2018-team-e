@@ -2,6 +2,7 @@ version: '3.5'
 services:
   apache-php:
     build: ./apache-php
+    image: apache-php
     container_name: apache-php-dev
     dns: 8.8.8.8
     sysctls:
@@ -16,7 +17,7 @@ services:
 
   mqtt:
     build: ./mqtt
-    image: mqtt-dev
+    image: mqtt
     container_name: mqtt-dev
     dns: 8.8.8.8
     sysctls:
