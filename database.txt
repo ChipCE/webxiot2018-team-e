@@ -1,0 +1,63 @@
+CREATE DATABASE pi;
+
+//test
+CREATE TABLE test (
+id int not null auto_increment,
+PRIMARY KEY (id)
+);
+INSERT INTO test(id) VALUES(1);
+
+//Light
+CREATE TABLE LightState (
+id int not null auto_increment,
+state BOOLEAN not null,
+PRIMARY KEY (id)
+);
+INSERT INTO LightState(state) VALUES(false);
+
+CREATE TABLE LightAuto (
+id int not null auto_increment,
+state BOOLEAN not null,
+PRIMARY KEY (id)
+);
+INSERT INTO LightAuto(state) VALUES(true);
+
+//aircon
+CREATE TABLE AirconState (
+id int not null auto_increment,
+state BOOLEAN not null,
+PRIMARY KEY (id)
+);
+INSERT INTO AirconState(state) VALUES(true);
+
+CREATE TABLE AirconAuto (
+id int not null auto_increment,
+state BOOLEAN not null,
+PRIMARY KEY (id)
+);
+INSERT INTO AirconAuto(state) VALUES(true);
+
+//stove
+CREATE TABLE StoveState (
+id int not null auto_increment,
+state BOOLEAN not null,
+PRIMARY KEY (id)
+);
+INSERT INTO StoveState(state) VALUES(true);
+
+CREATE TABLE StoveAuto (
+id int not null auto_increment,
+state BOOLEAN not null,
+PRIMARY KEY (id)
+);
+INSERT INTO StoveAuto(state) VALUES(true);
+
+//room
+CREATE TABLE Room (
+id int not null auto_increment,
+light BOOLEAN not null,
+temp int not null,
+hum int not null,
+PRIMARY KEY (id)
+);
+INSERT INTO Room(light,temp,hum) VALUES(false,12,64);
