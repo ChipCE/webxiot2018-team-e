@@ -1,0 +1,69 @@
+.main-content
+{
+    margin-top : 10vh;
+}
+
+.navbar-dark
+{
+    background-color:#1e1e1e;
+}
+
+body
+{
+    color:#181717;
+    background-image: url("logo.png");
+    background-repeat: repeat;
+}
+
+th
+{
+    color:#3d3d3d;
+}
+
+td
+{
+    color : #464646;
+}
+
+.navbar .dropdown-menu 
+{
+    background-color: #1e1e1e;
+    color:#d3d3d3;
+    border:none;
+}
+  
+  /* and this styles the dropdwon trigger link, when open */
+.navbar .dropdown.show a 
+{ 
+    background-color: #1e1e1e;
+    color:#d3d3d3;
+    border:none;
+}
+
+.navbar .dropdown.show a:hover 
+{ 
+    background-color: #1e1e1e;
+    color:#00c3ff;
+    border:none;
+}
+
+.cat-seperator
+{
+    background-color: #272727;
+    color:#00c3ff;
+}
+
+.card-text
+{
+    color: #3d3d3d;
+}
+
+.state-on
+{
+    color: #3d3d3d;
+}
+
+.state-off
+{
+    color: #d8d8d8;
+}

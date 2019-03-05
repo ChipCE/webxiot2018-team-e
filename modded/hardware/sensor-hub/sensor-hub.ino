@@ -200,11 +200,11 @@ void sendMqtt()
     client.publish(lightTopic.c_str(), String(light).c_str(),true);
     //client.publish(irTopic.c_str(), String(irCode).c_str(),true);
     if(irCode == 1)
-      client.publish("light/switch","1");
+      client.publish("light/switch","hubSwitch");
     if(irCode == 2)
-      client.publish("fan/switch","1");
+      client.publish("fan/switch","hubSwitch");
     if(irCode == 3)
-      client.publish("auto","1");
+      client.publish("autoswitch","hubSwitch");
     lastSend = millis();
     irCode = 0;
   }
